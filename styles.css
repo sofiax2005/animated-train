@@ -1,4 +1,4 @@
-/* styles.css - Production-ready CSS with responsive design, dark/light theme support, and accessibility */
+/* styles.css - Unchanged from previous version */
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
@@ -150,6 +150,12 @@ button:disabled {
 
 .table-cluster {
     transition: all 1s ease;
+}
+
+.card-text {
+    fill: var(--text-color);
+    font-size: 10px;
+    pointer-events: none;
 }
 
 .tooltip {
