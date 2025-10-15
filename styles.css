@@ -1,13 +1,13 @@
-/* styles.css - Unchanged from previous version */
+/* styles.css - Enhanced for real estate theme: greens/blues for properties, maps vibe */
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
-    --accent-color: #007bff;
-    --chaos-color: #ff6b6b;
-    --order-color: #51cf66;
+    --accent-color: #28a745; /* Green for real estate growth */
+    --chaos-color: #dc3545; /* Red for market chaos */
+    --order-color: #17a2b8; /* Blue for structured deals */
     --table-bg: #f8f9fa;
     --line-color: #6c757d;
-    --glow: 0 0 10px rgba(0, 123, 255, 0.5);
+    --glow: 0 0 10px rgba(40, 167, 69, 0.5);
     --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -43,6 +43,19 @@ header {
 header h1 {
     margin: 0 0 10px;
     color: var(--accent-color);
+}
+
+#upload-section {
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: var(--table-bg);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+#csv-upload {
+    margin-right: 10px;
 }
 
 main {
@@ -92,8 +105,8 @@ button {
     transition: background 0.3s;
 }
 
-button:hover {
-    background: #0056b3;
+button:hover:not(:disabled) {
+    background: #218838;
 }
 
 button:disabled {
@@ -168,11 +181,12 @@ button:disabled {
     font-size: 12px;
     box-shadow: var(--shadow);
     z-index: 20;
+    max-width: 200px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     #svg { width: 100%; height: auto; }
-    #controls { flex-direction: column; gap: 10px; }
+    #controls, #upload-section { flex-direction: column; gap: 10px; }
     #narrator { max-width: 90%; }
 }
