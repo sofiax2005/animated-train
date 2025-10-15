@@ -1,13 +1,14 @@
-/* styles.css - Enhanced for real estate theme: greens/blues for properties, maps vibe */
+/* styles.css - Enhanced with smoother animations: cubic-bezier easing, glow on predict lines */
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
-    --accent-color: #28a745; /* Green for real estate growth */
-    --chaos-color: #dc3545; /* Red for market chaos */
-    --order-color: #17a2b8; /* Blue for structured deals */
+    --accent-color: #28a745;
+    --chaos-color: #dc3545;
+    --order-color: #17a2b8;
+    --predict-color: #ffc107; /* Gold for predictions */
     --table-bg: #f8f9fa;
     --line-color: #6c757d;
-    --glow: 0 0 10px rgba(40, 167, 69, 0.5);
+    --glow: 0 0 15px rgba(40, 167, 69, 0.6);
     --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -102,7 +103,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
 }
 
 button:hover:not(:disabled) {
@@ -126,6 +127,7 @@ button:disabled {
     stroke-width: 1;
     rx: 5;
     cursor: pointer;
+    transition: fill 0.5s ease;
 }
 
 .card.ordered {
@@ -147,22 +149,36 @@ button:disabled {
     stroke: var(--line-color);
     stroke-width: 2;
     marker-end: url(#arrowhead);
+    stroke-dasharray: 5,5;
+    stroke-dashoffset: 10;
 }
 
 .line.relationship {
     stroke: var(--accent-color);
     stroke-width: 3;
-    animation: pulse 2s infinite;
+    animation: pulse 3s ease-in-out infinite;
+    stroke-dasharray: none;
+}
+
+.predict-line {
+    stroke: var(--predict-color);
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 3,3;
+    animation: dash 2s linear infinite;
 }
 
 @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes dash {
+    to { stroke-dashoffset: -6; }
 }
 
 .table-cluster {
-    transition: all 1s ease;
+    transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* r2d3 smooth ease */
 }
 
 .card-text {
