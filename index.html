@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Data Normalization: From Chaos to Clarity</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Medical Data Normalization Visualization</h1>
+            <p>Transform chaotic patient records into a normalized database schema (1NF to 5NF).</p>
+        </header>
+        <main id="visualization">
+            <svg id="svg" width="1200" height="800"></svg>
+            <div id="narrator"></div>
+            <div id="controls">
+                <button id="start-btn">Start Normalizing</button>
+                <button id="reset-btn" style="display: none;">Reset</button>
+                <div id="progress">
+                    <span>Redundancy: <span id="redundancy">15</span></span>
+                    <span>Normal Form: <span id="current-nf">Unnormalized</span></span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
